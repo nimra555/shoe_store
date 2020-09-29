@@ -1,0 +1,12 @@
+.heade{
+    display: flex;
+    background: blue;
+  }
+  
+  .heade h3{
+    font-family: 'Dancing Script', cursive;
+  }
+#footer{
+  color: #435bb5;
+  text-align: center;
+}  
