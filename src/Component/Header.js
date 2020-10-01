@@ -41,7 +41,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Shoes from './../shoes.json';
+
 
 
 const drawerWidth = 240;
@@ -49,11 +51,13 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        backgroundColor:'grey',
     },
     appBar: {
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
+            backgroundColor:'grey',
         }),
     },
     appBarShift: {
@@ -84,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
         // necessary for content to be below app bar
         ...theme.mixins.toolbar,
         justifyContent: 'flex-start',
+        backgroundColor:'grey',
     },
     content: {
         flexGrow: 1,
@@ -115,7 +120,7 @@ export default function PersistentDrawerRight() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-
+    console.log(Shoes);
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -126,8 +131,14 @@ export default function PersistentDrawerRight() {
                 })}
             >
                 <Toolbar>
+                {/* {Object.keys(Shoes).map(keyName => {
+                    return(<div> */}
+
+                        {/* <img src={ "https://secure-images.nike.com/is/image/DotCom/CV3042_104_A_PREM?$SNKRS_COVER_WD$&align=0,1"} height={150} /> */}
+                    {/* </div> */}
+                {/* )})} */}
                     <Typography variant="h6" noWrap className={classes.title}>
-                        Shoe Store
+                    Shoe Store
           </Typography>
                     <IconButton
                         color="inherit"
@@ -168,7 +179,9 @@ export default function PersistentDrawerRight() {
                     </IconButton>
                 </div>
                 <List>
-                    {['Home', 'About', 'Products', 'Cart'].map((text, index) => (
+                    {[<Link to="/">Home</Link>,
+                    <Link to="/about">About</Link>,
+                    <Link to="/product">product</Link>].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemText primary={text} />
                         </ListItem>

@@ -1,10 +1,10 @@
 import React from 'react';
-import useWebAnimations, { bounce } from "@wellyshen/use-web-animations";
+import useWebAnimations, {  pulse } from "@wellyshen/use-web-animations";
 
 
 function Home() {
   // const { ref } = useWebAnimations({ ...bounce });
-  const { keyframes, timing } = bounce;
+  const { keyframes, timing } = pulse;
   const { ref } = useWebAnimations({
     keyframes,
     timing: {
@@ -16,6 +16,7 @@ function Home() {
   return (
     <div className="container">
       <div className="target" ref={ref} />
+      <img src={" https://secure-images.nike.com/is/image/DotCom/CT8532_104_A_PREM?$SNKRS_COVER_WD$&align=0,1"} />
     </div>           
   );
 }
