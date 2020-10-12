@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import { Home, About, Product, Productdetail , Header ,Page ,Footer} from './Component/index';
+import Cart from './Component/Cart';
 
 function Routes() {
   return (
@@ -16,10 +17,11 @@ function Routes() {
           <Route path="/about" component={About}></Route>
           <Route exact path="/product" component={Product}></Route>
           <Route path="/product/:id" component={Productdetail}></Route>  
+          <Route path="/cart" component={Cart}></Route>
           <Route path="*" component={Page}></Route>                     
         </Switch>
-      </Router>
         <Footer/>
+      </Router>
     </div>
   );
 }

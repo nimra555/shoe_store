@@ -1,12 +1,28 @@
 .heade{
-    display: flex;
-    background: blue;
-  }
-  
-  .heade h3{
     font-family: 'Dancing Script', cursive;
-  }
-#footer{
-  color: #435bb5;
-  text-align: center;
+}
+.shoe-img{
+  width: 100%;
+  height: 100vh;
+  /* margin-bottom: -100px; */
 }  
+#footer{
+  color: white;
+  text-align: center;
+  background-color: #435bb5;
+  margin: 0;
+  padding: 5px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* margin-top: -5px; */
+}  
+.container , .target{
+  /* margin-bottom: -100px; */
+}
+.flex-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

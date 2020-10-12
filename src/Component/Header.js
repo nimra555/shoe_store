@@ -1,27 +1,3 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// // import './Style.css';
-
-// function Header() {
-//     return (
-//         <div className="heade">
-//             <div>
-//                 <h3>Shoe Store</h3>
-//             </div>
-//             <div>
-//                 <Link to="/">Home</Link>
-//                 <Link to="/about">About</Link>
-//                 <Link to="/product">product</Link>
-//                 {/* <Link to="/productdetail">productitem</Link> */}
-//             </div>
-//         </div>
-
-
-//     )
-// }
-
-// export default Header;
-
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -31,18 +7,15 @@ import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import { Link } from 'react-router-dom';
 import Shoes from './../shoes.json';
+import './Style.css';
 
 
 
@@ -51,13 +24,14 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        backgroundColor:'grey',
+        marginBottom:0,
     },
     appBar: {
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
-            backgroundColor:'grey',
+        marginBottom:0,
+
         }),
     },
     appBarShift: {
@@ -65,8 +39,12 @@ const useStyles = makeStyles((theme) => ({
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen,
+        marginBottom:0,
+
         }),
         marginRight: drawerWidth,
+        marginBottom:0,
+
     },
     title: {
         flexGrow: 1,
@@ -88,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
         // necessary for content to be below app bar
         ...theme.mixins.toolbar,
         justifyContent: 'flex-start',
-        backgroundColor:'grey',
     },
     content: {
         flexGrow: 1,
@@ -98,6 +75,8 @@ const useStyles = makeStyles((theme) => ({
             duration: theme.transitions.duration.leavingScreen,
         }),
         marginRight: -drawerWidth,
+        marginBottom:0,
+
     },
     contentShift: {
         transition: theme.transitions.create('margin', {
@@ -105,6 +84,8 @@ const useStyles = makeStyles((theme) => ({
             duration: theme.transitions.duration.enteringScreen,
         }),
         marginRight: 0,
+        marginBottom:0,
+
     },
 }));
 
@@ -131,14 +112,8 @@ export default function PersistentDrawerRight() {
                 })}
             >
                 <Toolbar>
-                {/* {Object.keys(Shoes).map(keyName => {
-                    return(<div> */}
-
-                        {/* <img src={ "https://secure-images.nike.com/is/image/DotCom/CV3042_104_A_PREM?$SNKRS_COVER_WD$&align=0,1"} height={150} /> */}
-                    {/* </div> */}
-                {/* )})} */}
                     <Typography variant="h6" noWrap className={classes.title}>
-                    Shoe Store
+                    <h3 className="heade"> Shoe Store </h3>
           </Typography>
                     <IconButton
                         color="inherit"
@@ -167,12 +142,6 @@ export default function PersistentDrawerRight() {
                     paper: classes.drawerPaper,
                 }}
             >
-                {/* <div>
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/product">product</Link>
-                    
-                </div> */}
                 <div className={classes.drawerHeader}>
                     <IconButton onClick={handleDrawerClose}>
                         {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
@@ -181,7 +150,8 @@ export default function PersistentDrawerRight() {
                 <List>
                     {[<Link to="/">Home</Link>,
                     <Link to="/about">About</Link>,
-                    <Link to="/product">product</Link>].map((text, index) => (
+                    <Link to="/product">Product</Link>,
+                    <Link to="/cart">Cart</Link>].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemText primary={text} />
                         </ListItem>

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext, useState } from "react";
+import { products } from "../ProductContext";
 
-
-function Cart() {
+function Cart({props}) {
+  let { Addproduct,addProduct,deleteProduct, } = useContext(
+    products
+  );
   return (
     <div>
-      
+      Cart
     </div>
   );
 }
