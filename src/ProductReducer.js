@@ -1,21 +1,18 @@
-const   ProductReducer = ((state, action) => {
+const cartReducer = ((state, action) => {
     switch (action.type) {
         case 'Add_Product': {
-            return {
-                ...state,
-                product: [action.payload, ...state.product]
-            }  
-        }
+            return [...state, action.payload];
+        }    
         case "Delete_Product" : {
-            return {
-                ...state,
-                product : state.product.filter(pro => 
-                    pro.id !== action.payload)
-            }
+            return  state.filter(pro => 
+                    pro.id !== action.payload.id)
+            
         }  
+        case 'PAY':
+            return [];
         default: return state;
     }
   }
 );
 
-export default ProductReducer;
+export default cartReducer;

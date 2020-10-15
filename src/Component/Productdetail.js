@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Shoes from './../shoes.json';
 import './Style.css';
+import Addtocart from './AddtoCart';
 
 
 function Productdetail() {
@@ -9,6 +10,7 @@ function Productdetail() {
   const shoe = Shoes[id];
   const [productItem,setproductItem] = useState(id);
   console.log(shoe);
+  const dataItem = [productItem - 1];
 
 
   if (!shoe)
@@ -19,9 +21,9 @@ function Productdetail() {
         <img src={shoe.img} height={300} />
       </div>
       <div>
-      <h3>{shoe.name}</h3>
+      <h3 className="heade">{shoe.name}</h3>
       <p>{shoe.description}</p>
-      <button onClick={()=>console.log("add")}>Add to cart</button>
+      <Addtocart dataItem={dataItem}/>
       </div>
     </div>
   );
