@@ -5,7 +5,7 @@ const cartReducer = ((state, action) => {
         }    
         case "Delete_Product" : {
             return  state.filter(pro => 
-                    pro.id !== action.payload.id)
+                    pro.name !== action.payload.name)
             
         }  
         case 'PAY':

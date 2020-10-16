@@ -8,9 +8,9 @@ import Addtocart from './AddtoCart';
 function Productdetail() {
   let { id } = useParams();
   const shoe = Shoes[id];
-  const [productItem,setproductItem] = useState(id);
+  // const [productItem,setproductItem] = useState(id);
   console.log(shoe);
-  const dataItem = [productItem - 1];
+  // const dataItem = [productItem - 1];
 
 
   if (!shoe)
@@ -23,7 +23,7 @@ function Productdetail() {
       <div>
       <h3 className="heade">{shoe.name}</h3>
       <p>{shoe.description}</p>
-      <Addtocart dataItem={dataItem}/>
+      <Addtocart dataItem={shoe}/>
       </div>
     </div>
   );

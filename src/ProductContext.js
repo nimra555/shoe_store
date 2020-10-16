@@ -4,7 +4,7 @@ import cartReducer from './ProductReducer';
 // initial state
 const Initialproduct  = [];
 
-export const Products = useContext(Initialproduct);
+export const Products = createContext(Initialproduct);
 
 export function ProductProvider({ children }) {
     let [state, dispatch] = useReducer(cartReducer, Initialproduct);
