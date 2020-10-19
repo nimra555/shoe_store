@@ -1,5 +1,6 @@
 import React,{useContext} from 'react';
 import { Products } from '../ProductContext';
+import Checkout from './Checkout';
 
 
 function Cart() {
@@ -14,13 +15,14 @@ function Cart() {
                       <img src={product.img} alt="shoe" height={100}/>  
                       <h4>{product.name}</h4>
                       <strong>{product.price}</strong>
-                      <button onClick={deleteProduct}>remove</button>
-                      <button onClick={checkOut}>Checkout</button>
+                      <button onClick={() => deleteProduct(product)}>remove</button>
                       </div>
   
                   )
               })
             }
+            <Checkout />
+            {/* <button onClick={() => checkOut}>Checkout</button> */}
         </div>
               
         
